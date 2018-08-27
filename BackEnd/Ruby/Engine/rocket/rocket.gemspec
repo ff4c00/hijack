@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Rocket::VERSION
   s.authors     = ["ff4c00"]
   s.email       = ["ff4c00@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Rocket."
-  s.description = "TODO: Description of Rocket."
+  s.homepage    = ""
+  s.summary     = "Summary of Rocket."
+  s.description = "Description of Rocket."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
