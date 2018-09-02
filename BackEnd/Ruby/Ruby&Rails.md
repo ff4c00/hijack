@@ -636,6 +636,10 @@ hash.invert|创建一个新的 hash,倒置hash中的keys和values<br>也就是�
 hash.merge!(other_hash)<br>hash.merge(other_hash){\|key, oldval, newval\| block}|返回一个新的哈希,包含hash和other_hash的内容<br>重写hash中与 other_hash带有重复键的键值对
 hash.replace(other_hash)|把hash的内容替换为other_hash的内容
 hash.to_a|从 hash 中创建一个二维数组<br>每个键值对转换为一个数组,所有这些数组都存储在一个数组中
+Hash.from_xml(xml)|xml转为哈希
+ActiveSupport::JSON.decode(jsonstr)|json转哈希
+Hash.to_json(hash)<br>ActiveSupport::JSON.encode(hash)|哈希转json
+
 
 #### 1.12.2.2. 散列键
 0与0.0作为散列的键时会被判断为不同的键,这是由于散列对象内部对于键的比较使用了eql?方法

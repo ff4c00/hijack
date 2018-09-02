@@ -154,7 +154,7 @@ npm install vue
 ## 2.2. 命令行工具 (CLI)
 Vue 提供了一个[官方的 CLI](https://github.com/vuejs/vue-cli),为单页面应用 (SPA) 快速搭建繁杂的脚手架.它为现代前端工作流提供了 batteries-included 的构建设置.只需要几分钟的时间就可以运行起来并带有热重载、保存时 lint 校验,以及生产环境可用的构建版本.更多详情可查阅 [Vue CLI 的文档](https://cli.vuejs.org).
 
-CLI 工具假定用户对 Node.js 和相关构建工具有一定程度的了解.如果是新手,我们强烈建议先在不用构建工具的情况下通读指南,在熟悉 Vue 本身之后再使用 CLI.</p>
+CLI 工具假定用户对 Node.js 和相关构建工具有一定程度的了解.如果是新手,强烈建议先在不用构建工具的情况下通读指南,在熟悉 Vue 本身之后再使用 CLI.</p>
 
 ## 2.3. Vue Devtools
 
@@ -302,8 +302,7 @@ new Vue({
 也有一些其它的钩子,在实例生命周期的不同阶段被调用,如 [`mounted`](../api/#mounted)、[`updated`](../api/#updated) 和 [`destroyed`](../api/#destroyed).<br>
 生命周期钩子的 `this` 上下文指向调用它的 Vue 实例.
 
-不要在选项属性或回调上使用[箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions),比如:<br
->
+不要在选项属性或回调上使用[箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions),比如:<br>
  `created: () => console.log(this.a)` 或 <br>
  
  `vm.$watch('a', newValue => this.myMethod())`.<br>
@@ -353,7 +352,7 @@ vuejs的内容直接放在\<script\>标签即可.
 ## 4.3. 指令
 
 指令 (Directives) 是带有 `v-` 前缀的特殊特性.<br>
-指令特性的值预期是**单个 JavaScript 表达式** (`v-for` 是例外情况,稍后我们再讨论).<br>
+指令特性的值预期是**单个 JavaScript 表达式** (`v-for` 是例外情况,稍后再讨论).<br>
 **指令的职责是,当表达式的值改变时,将其产生的连带影响,响应式地作用于 DOM.**
 
 ## 4.4. 参数
@@ -365,7 +364,7 @@ vuejs的内容直接放在\<script\>标签即可.
 <a v-bind:href="url">...</a>
 ```
 
-在这里 `href` 是参数,告知 `v-bind` 指令将该元素的 `href` 特性与表达式 `url` 的值绑定(bin,dangularjs一般称为binding).
+在这里 `href` 是参数,告知 `v-bind` 指令将该元素的 `href` 特性与表达式 `url` 的值绑定(bind,angularjs一般称为binding).
 
 另一个例子是 `v-on` 指令,它用于监听 DOM 事件:
 
@@ -458,10 +457,9 @@ vuejs的内容直接放在\<script\>标签即可.
 
 计算属性|方法
 -|-
-**计算属性是基于它们的依赖进行缓存的**,<br>
-在相关依赖发生改变时它们才会重新求值.|调用方法将**总会**再次执行函数.
+**计算属性是基于它们的依赖进行缓存的**,<br>在相关依赖发生改变时它们才会重新求值.|调用方法将**总会**再次执行函数.
 
-可能已经注意到我们可以通过在表达式中调用方法来达到同样的效果:
+可能已经注意到可以通过在表达式中调用方法来达到同样的效果:
 
 ``` html
 <p>Reversed message: "{{ reversedMessage() }}"</p>
@@ -485,7 +483,7 @@ methods: {
 
 ### 5.1.1. 为什么缓存?
 假设有一个性能开销比较大的计算属性 **A**,它需要遍历一个巨大的数组并做大量的计算.<br>
-然后我们可能有其他的计算属性依赖于 **A** .如果没有缓存,我们将不可避免的多次执行 **A** 的 getter！<br>
+然后可能有其他的计算属性依赖于 **A** .如果没有缓存,将不可避免的多次执行 **A** 的 getter！<br>
 如果不希望有缓存,请用方法来替代.
 
 ## 5.2. 计算属性 vs 侦听属性
@@ -1717,7 +1715,7 @@ Vue.config.keyCodes.f1 = 112
 它负责监听用户的输入事件以更新数据,并对一些极端场景进行一些特殊处理.
 
 `v-model` 会忽略所有表单元素的 `value`、`checked`、`selected` 特性的初始值而总是将 Vue 实例的数据作为数据来源.<br>
-应该通过 JavaScript 在组件的 `data` 选项中声明初始值.
+**应该通过 JavaScript 在组件的 `data` 选项中声明初始值**.
 
 对于需要使用[输入法](https://zh.wikipedia.org/wiki/%E8%BE%93%E5%85%A5%E6%B3%95) (如中文、日文、韩文等) 的语言,会发现 `v-model` 不会在输入法组合文字过程中得到更新.<br>
 如果也想处理这个过程,请使用 `input` 事件.

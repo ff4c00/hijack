@@ -13,7 +13,7 @@
 
 ```haml
 %p
-  &div{id: 'blah'}Blan!
+  %div{id: 'blah'}Blan!
 ```
 
 ```html
@@ -21,7 +21,7 @@
 ```
 
 ```haml
-%li{data: {target:"#demo"}, data: {slide: {to: "0"}}, class:"active"}
+%li{data: {target:"#demo", slide: {to: "0"}}, class:"active"}
 ```
 
 # 2. erb转haml
