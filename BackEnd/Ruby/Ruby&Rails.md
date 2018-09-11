@@ -104,8 +104,6 @@
       - [2.2.2.1. ransack](#2221-ransack)
         - [2.2.2.1.1. 简介](#22211-简介)
         - [2.2.2.1.2. 常用搜索条件](#22212-常用搜索条件)
-    - [2.2.3. 软删除](#223-软删除)
-      - [2.2.3.1. paranoia](#2231-paranoia)
     - [2.2.4. 权限控制](#224-权限控制)
       - [2.2.4.1. cancancan](#2241-cancancan)
       - [2.2.4.2. pundit](#2242-pundit)
@@ -1511,34 +1509,6 @@ not_null|不是null
 -----
 [RubyChina-开源项目 ransack 搜索条件](https://ruby-china.org/topics/29556)
 
-### 2.2.3. 软删除
-#### 2.2.3.1. paranoia
-> Gemfile添加源
-```ruby
-gem "paranoia", "~> 版本"
-```
-并执行更新
-
-> 创建迁移
-```ruby
-def change
-  add_column :table_name, :deleted_at, :datetime
-  add_index :table_name, :deleted_at
-end
-```
-> 模型
-```ruby
-# without_default_scope: true 非必须项,添加后默认将不再查询出被软删除的数据
-acts_as_paranoid without_default_scope: true
-```
-> 常用方法
-
-方法|含义
--|-
-destroy|数据将被软删除,并非真实删除
-really_destroy!|真实删除
-
-> GItHub | [paranoia](https://github.com/rubysherpas/paranoia)
 
 ### 2.2.4. 权限控制
 #### 2.2.4.1. cancancan
