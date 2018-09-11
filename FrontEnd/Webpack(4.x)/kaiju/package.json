@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open --histroy-api-fallback"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +42,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
   }
 }

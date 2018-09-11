@@ -1,6 +1,5 @@
 <!-- TOC -->
 
-- [安装](#安装)
 - [概念](#概念)
   - [入口(entry)](#入口entry)
   - [输出(output)](#输出output)
@@ -26,11 +25,10 @@
       - [绝对路径](#绝对路径)
       - [相对路径](#相对路径)
       - [模块路径](#模块路径)
+- [前端路由](#前端路由)
+  - [vue-router](#vue-router)
 
 <!-- /TOC -->
-
-# 安装
-
 
 # 概念
 
@@ -423,6 +421,11 @@ import "./file2";
 import "module";
 import "module/lib/file";
 ```
+
+# 前端路由
+
+## vue-router
+
 
 ```js
 

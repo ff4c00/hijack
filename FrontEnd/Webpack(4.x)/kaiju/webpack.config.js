@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].chunk.js'    
   },
   mode: "development",
   devtool: 'inline-source-map',// 追踪错误和警告(仅用于开发模式)
@@ -55,6 +56,10 @@ module.exports = {
     }),
     new ExtractTextPlugin("index.css"),
     new VueLoaderPlugin(),
-    new webpack.HotModuleReplacementPlugin() //使用webpack内置的HMR插件(模块热替换(Hot Module Replacement 或 HMR))(仅用于开发模式)
+    new webpack.HotModuleReplacementPlugin(), //使用webpack内置的HMR插件(模块热替换(Hot Module Replacement 或 HMR))(仅用于开发模式)
+    new ExtractTextPlugin({
+      filename: '[name].css',
+      allChunks: true
+    })
   ]
 };
