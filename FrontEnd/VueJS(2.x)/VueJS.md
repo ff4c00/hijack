@@ -108,6 +108,12 @@
   - [12.10. X-Templates](#1210-x-templates)
 - [渲染函数](#渲染函数)
   - [基础](#基础)
+- [工具安装](#工具安装)
+  - [vue-devtools](#vue-devtools)
+    - [克隆项目](#克隆项目)
+    - [vue-devtools-master](#vue-devtools-master)
+      - [shells/chrome/mainifest.json](#shellschromemainifestjson)
+    - [Chrome浏览器](#chrome浏览器)
 
 <!-- /TOC -->
 
@@ -2075,6 +2081,10 @@ vm.selected.number // => 123
 
 # 12. 组件基础
 
+组件可以分为数据(model)和视图(view),数据更新时,视图也会自动更新.<br>
+视图中又可以绑定一些事件,当它们触发methods里指定的方法时从而可以改变数据,更新视图.<br>
+这就是一个组件的基本运行模式.
+
 ## 12.1. 基本示例
 
 这里有一个 Vue 组件的示例:
@@ -2727,3 +2737,35 @@ Vue.component('anchored-heading', {
 简单清晰很多！简单来说,这样代码精简很多,但是需要非常熟悉 Vue 的实例属性.<br>
 在这个例子中,需要知道当不使用 `slot` 属性向组件中传递内容时,比如 `anchored-heading` 中的 `Hello world!`,这些子元素被存储在组件实例中的 `$slots.default`中.<br>
 如果还不了解, **在深入 render 函数之前推荐阅读 `实例属性` API.**
+
+# 工具安装
+
+## vue-devtools
+
+### 克隆项目
+```bash
+git clone https://github.com/vuejs/vue-devtools
+```
+
+### vue-devtools-master
+
+在vue-devtools-master目录下:
+
+0. npm install
+0. npm run build
+
+#### shells/chrome/mainifest.json
+
+persistant改为true
+
+```json
+"persistant": true
+```
+
+### Chrome浏览器
+
+更多工具>扩展程序> **勾选开发者模式**
+
+将shells目录下chrome整个文件夹拖拽到浏览器中,并启用.
+
+在浏览器项目页面中的审核工具的最右侧会出现`vue`选项.

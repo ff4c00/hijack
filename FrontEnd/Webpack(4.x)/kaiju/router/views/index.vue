@@ -8,6 +8,9 @@
   -->
   <div>
     <div>首页</div>
+    <p>计数器:{{count}}</p>
+    <button @click="handleIncrement">+1</button>
+    <button @click="handleDecrease">-2</button>
     <div>
       <!--
         router-link标签是vue-router的内置组件,默认被渲染为\<a>标签.
@@ -24,7 +27,23 @@
 
 <script>
   export default {
-
+    computed: {
+      count () {
+        return this.$store.state.count;
+      }
+    },
+    methods: {
+      handleIncrement () {
+        // 在组件内,通过this.$store.commit方法来执行mutations中的方法.
+        this.$store.commit('increment');
+      },
+      handleDecrease () {
+        this.$store.commit({
+          type: 'decrease',
+          count: 2
+        });
+      }
+    }
   }
 </script>
 
