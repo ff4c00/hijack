@@ -6,7 +6,7 @@
   - [1.3. echo-内容写入文件](#13-echo-内容写入文件)
   - [1.4. 特殊符号](#14-特殊符号)
   - [1.5. sleep-延迟指定时间](#15-sleep-延迟指定时间)
-  - [tree](#tree)
+  - [1.6. tree](#16-tree)
 - [2. 备份](#2-备份)
   - [2.1. tar 打包命令](#21-tar-打包命令)
   - [2.2. rsync-数据镜像备份](#22-rsync-数据镜像备份)
@@ -14,6 +14,7 @@
 - [3. 常用软件](#3-常用软件)
   - [3.1. Unity Tweak Tool](#31-unity-tweak-tool)
     - [3.1.1. 菜单栏消失](#311-菜单栏消失)
+  - [3.2. indicator-stickynotes](#32-indicator-stickynotes)
 
 <!-- /TOC -->
 
@@ -70,7 +71,7 @@ nd|延迟n天
 
 1: n可以为小数
 
-## tree 
+## 1.6. tree 
 
 参数|含义
 -|-
@@ -133,4 +134,15 @@ setsid unity
 > [Ubuntu 16.04中安装 Unity Tweak Tool](https://www.linuxidc.com/Linux/2016-05/130951.htm)
 
 > [ubuntu16.04 中软件的菜单栏消失不见怎么办](https://blog.csdn.net/skant16/article/details/69808490)
+
+## 3.2. indicator-stickynotes
+
+桌面便签工具.
+
+```bash
+sudo add-apt-repository ppa:umang/indicator-stickynotes
+sudo apt-get update 
+sudo apt-get install indicator-stickynotes 
+
+```
 

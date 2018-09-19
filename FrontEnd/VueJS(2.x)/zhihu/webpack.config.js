@@ -62,5 +62,14 @@ module.exports = {
       filename: '[name].css',
       allChunks: true
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, 'lib'),
+      '@lib': path.resolve(__dirname, 'lib'),
+      '@components': path.resolve(__dirname, 'components'),
+      '@datas': path.resolve(__dirname, 'datas')
+    }
+},
 };
