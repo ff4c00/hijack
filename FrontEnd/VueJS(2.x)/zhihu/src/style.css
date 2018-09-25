@@ -8,6 +8,7 @@ html, body {
 
 .zhihu-menu {
   width: 150px;
+  padding-left: 25px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -53,11 +54,11 @@ html, body {
 }
 
 .zhihu-list {
-  width: 300px;
+  width: 500px;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 150px;
+  left: 175px;
   overflow: auto;
   border-right: 1px solid #d7dde4;
 }
@@ -77,7 +78,7 @@ html, body {
 }
 
 .zhihu-article {
-  margin-left: 450px;
+  margin-left: 675px;
   padding: 20px;
 }
 
@@ -117,6 +118,49 @@ html, body {
 
 .zhihu-title.noImg {
   padding-left: 5px;
+}
+
+.zhihu-article-comments {
+  margin: 10px 0;
+}
+
+.zhihu-article-comments span {
+  display: block;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.zhihu-article-comment {
+ overflow: hidden;
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ border-bottom: 1px dashed #e3e8ee;
+}
+
+.zhihu-article-comment-avatar {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.zhihu-article-comment-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.zhihu-article-comment-content {
+  margin-left: 65px;
+}
+
+.zhihu-article-comment-content-time {
+  color: #9ea7b4;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.zhihu-article-comment-content-text {
+  margin-top: 10px;
 }
 
 

@@ -52,3 +52,30 @@ export let demoArticle = {
   "id":9696107,
   "css":["http:\/\/news-at.zhihu.com\/css\/news_qa.auto.css?v=4b3e3"]
 };
+
+// https://news-at.zhihu.com/api/4/story/9696107/short-comments
+
+export let damoComtent = {
+  "comments":[
+    {"author":"Gog","content":"收入达到那个量级还能做到挣多少花多少，真是厉害啊！","avatar":"http:\/\/pic1.zhimg.com\/da8e974dc_im.jpg","time":1537508091,"id":32315589,"likes":1},
+    {"author":"momo","content":"只有我觉得很像某一集柯南的开头？","avatar":"http:\/\/pic2.zhimg.com\/v2-30f79144368a7abb05b11bb742781be5_im.jpg","time":1537345822,"id":32307020,"likes":1},
+    {"author":"涨到你怀疑人生","content":"精彩的人生。赞六小时工作制。完爆厉害国","avatar":"http:\/\/pic4.zhimg.com\/v2-844b583167599824d9a1e41cc7af99a3_im.jpg","time":1537331809,"id":32306320,"likes":2},
+    {"author":"团长大人","content":"帝国主义的有钱人就是和我们的暴发户不一样，","avatar":"http:\/\/pic1.zhimg.com\/e59a7de946e493e69c7501863d1472b0_im.jpg","time":1537327324,"id":32305947,"likes":1},
+    {"author":"LBsay","content":"牛逼！","avatar":"http:\/\/pic2.zhimg.com\/v2-c63ec4bdbb17ac40552bf64144f032c9_im.jpg","time":1537325786,"id":32305846,"likes":0},
+    {"author":"raymondlaw","content":"不知道写文章想表达啥，就做个新闻。？","avatar":"http:\/\/pic2.zhimg.com\/61ca3cece29f2dc6025c9c1a582a02e9_im.jpg","time":1537323108,"id":32305701,"likes":0},
+    {"author":"不是辣纸舒","content":"脑洞确实大，但炒作也是真会炒作。","avatar":"http:\/\/pic3.zhimg.com\/v2-0387296ddafec2e972728ecdc1ae174a_im.jpg","time":1537322739,"id":32305680,"likes":0},
+    {"author":"beckhansen","content":"fly me to the moon","avatar":"http:\/\/pic1.zhimg.com\/ebee18a12ee0060db24ea7b54670a3d0_im.jpg","time":1537322386,"id":32305661,"likes":2},
+    {"author":"崔小鱼","content":"真·享受人生","avatar":"http:\/\/pic4.zhimg.com\/e24115a19b0815d04138ba4b23b34d7f_im.jpg","time":1537320652,"id":32305526,"likes":0},
+    {"author":"程韬","content":"为什么没有人觉得这是美帝选的小白鼠","avatar":"http:\/\/pic3.zhimg.com\/v2-05ffc1affc6760526ba02658092002ba_im.jpg","time":1537318640,"id":32305267,"likes":0},
+    {"author":"心动不如鸡冻","content":"这不是日本版的王思聪吗？额，比王思聪更有头脑，脑洞更大一些。","avatar":"http:\/\/pic1.zhimg.com\/v2-27bfdaa1b0ce94d4e3510fbe570cf71c_im.jpg","time":1537317353,"id":32305073,"likes":0},
+    {"author":"鯊魚轟炸機機","content":"他看起来这么弯竟然只有前女友们……","avatar":"http:\/\/pic2.zhimg.com\/652e96f45_im.jpg","time":1537291196,"id":32304115,"likes":3},
+    {"author":"阿漆a7","content":"活得真潇洒，不枉此生啊","avatar":"http:\/\/pic3.zhimg.com\/504934a9590cbada83d04790298fbbf6_im.jpg","time":1537285268,"id":32303788,"likes":7},
+    {"author":"甲醛","content":"我日，","avatar":"http:\/\/pic3.zhimg.com\/v2-80f2566db1711d7864b54fa2ec215766_im.jpg","time":1537279417,"reply_to":{"content":"中国人民的老朋友，我以为。。","status":0,"id":32303152,"author":"Quinn"},"id":32303272,"likes":2},
+    {"author":"Quinn","content":"中国人民的老朋友，我以为。。","avatar":"http:\/\/pic2.zhimg.com\/v2-d6b036062c2308a3b0228b54c9b54719_im.jpg","time":1537275452,"id":32303152,"likes":11},
+    {"author":"第四层梦境","content":"这一生活成这样真tm酷，感觉他随便一件事都够让人觉得这一辈子值了。","avatar":"http:\/\/pic1.zhimg.com\/6d902d1ef6801c7214f8a05d80a0e31c_im.jpg","time":1537270584,"id":32302920,"likes":4},
+    {"author":"一个","content":"很值啊，顺便给公司打了一波广告","avatar":"http:\/\/pic1.zhimg.com\/da8e974dc_im.jpg","time":1537267279,"id":32302680,"likes":7},
+    {"author":"师兄a才怪","content":"一看到邀请艺术家，设计师，明星，等人一起去一个地方，就想到柯南里头发生case的时候，一个富豪邀请国内各圈子知名人士，然后……阴谋在人群众悄悄产生了，柯南来一次破案大冒险，完美回家，吃小兰做的饭。","avatar":"http:\/\/pic3.zhimg.com\/316b02a6a8898622a542069b501bbb5e_im.jpg","time":1537266321,"id":32302616,"likes":16},
+    {"author":"正在认真学习的龙宝","content":"要是让我知道有这个0元活动，他绝壁没钱上太空","avatar":"http:\/\/pic1.zhimg.com\/19409f3fbfd189809188547ad56f0f88_im.jpg","time":1537265365,"id":32302577,"likes":28},
+    {"author":"彻底蛋定的兔斯基","content":"炫富也不用怕被杀猪的…","avatar":"http:\/\/pic2.zhimg.com\/v2-26c3e4b5bb224819beefec1fabbee4e1_im.jpg","time":1537264236,"id":32302504,"likes":2}
+  ]
+}
