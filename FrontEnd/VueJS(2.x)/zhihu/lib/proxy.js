@@ -16,9 +16,9 @@ const localHost = '127.0.0.1';
 const apiPort = 8010;
 const imgPort = 8011;
 
-const targetApiDoMain = 'https://new-at.zhihu.com/api/4/';
-const targetImgDoMain = 'https://pic1.zhimg.com/';
+const targetApiDoMain = 'https://news-at.zhihu.com/api/4';
 
+// https://news-at.zhihu.com/api/4/news/9696107 
 const apiServer = http.createServer((req, res) => {
   const options = {
     url: targetApiDoMain+req.url
@@ -28,11 +28,12 @@ const apiServer = http.createServer((req, res) => {
       // 设置编码类型(解决中文乱码问题)
       res.setHeader('Content-Type', 'text/plain;charset=UTF-8');
       // 设置所有域允许跨域
-      ses.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.end(body);
+      // console.log("\n\n\n"+(options.url)+"接口返回内容:\n"+body)
     }else{
-      console.log(error);
-      console.log(zh_error(error));
+      console.log("文章详情获取异常["+targetApiDoMain+req.url+"]:"+error);
+      // console.log(zh_error(error));
     };
   };
   request.get(options, callBack);
@@ -54,7 +55,7 @@ const imgServer = http.createServer((req,res) => {
     if (!error && response.statusCode === 200) {
       const contentType = response.headers['content-type'];
       res.setHeader('content-Type', contentType);
-      ses.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.end(body);
     }else{
       console.log(error)

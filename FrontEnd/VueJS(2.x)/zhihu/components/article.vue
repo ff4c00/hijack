@@ -1,9 +1,10 @@
 <template>
   <div class="zhihu-article">
-    <div class="zhihu-article-title">
+
+    <!-- <div class="zhihu-article-title">
       {{data.title}}
-    </div>
-    <div class="zhihu-article-content" v-html="data.body">
+    </div> -->
+    <div class="zhihu-article-content" v-html="data.body+''">
     </div>
 
     <div class="zhihu-article-comments" v-show="comments.length">
@@ -39,31 +40,40 @@ export default {
   },
   data () {
     return {
-      // data: {},
-      data: demoArticle,
-      // comments: []
-      comments: damoComtent.comments
+      data: {},
+      // data: demoArticle,
+      comments: [],
+      // comments: damoComtent.comments,
+      util: Util
     }
   },
   methods: {
     getArticle () {
-      Util.get('news/' + this.id)
+      Util.ajax.get('news/' + this.id)
       .then( res => {
-        res.body = res.body.replace(/src="http/g, 'src="' + imgPath + 'https');
-        this.date = res;
+        res.body = res.body.replace(/src="http/g, 'src="' + Util.imgPath + 'https');
+        this.data = res;
         // 返回文章顶端
         window.scrollTo(0,0);
         this.getComments();
       })
+      .catch(function (error) {
+        console.log(error);
+      })
     },
     getComments () {
-      this.comments = [];
-      
+      Util.ajax.get('story/'+this.id+'/short-comments')
+        .then( res => {
+          this.comments = res.comments;
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
     }
   },
   watch: {
     id (val) {
-      // if (val) this.getArticle();
+      if (val) this.getArticle();
     }
   }
 

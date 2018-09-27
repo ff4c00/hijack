@@ -210,7 +210,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 ### 2.3.2. 创建实例时设置配置的默认值
 
-根据上面的可配置项,通过create方法可以自定义配置一个新的axios实例,这样在调用新实例时默认具有了某些固定的配置项,如:
+根据上面的可配置项,通过create方法可以自定义配置一个新的axios实例,<br>
+这样在调用新实例时默认具有了某些固定的配置项,如:
 
 ```js
 var instance = axios.create({
@@ -224,7 +225,11 @@ instance.get('/user?ID=12345')
 
 ### 2.3.3. 配置的优先顺序
 
-配置会以一个优先顺序进行合并.这个顺序是:在lib/defaults.js找到的库的默认值,然后是实例的defaults属性,最后是请求的config参数.
+配置会以一个优先顺序进行合并,这个顺序是:<br>
+
+0. 在lib/defaults.js找到的库的默认值
+0. 然后是实例的defaults属性
+0. 最后是请求的config参数
 
 **后者将优先于前者**
 

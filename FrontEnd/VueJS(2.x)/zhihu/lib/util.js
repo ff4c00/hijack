@@ -4,13 +4,16 @@ import axios from 'axios';
 
 const Util = {
   imgPath: 'http://127.0.0.1:8011/img/',
-  apiPath: 'http://127.0.0.1:8010/'
+  apiPath: 'http://127.0.0.1:8010/',
+  // development: false
+  development: true
 };
 
 Util.ajax = axios.create({
-  // baseURL: Util.apiPath
-  headers: {
-    'Content-Type': 'text/plain;charset=UTF-8',
+  baseURL: Util.apiPath,
+  header: {
+    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    'Access-Control-Allow-Methods': '*',
     'Access-Control-Allow-Origin': '*'
   },
 });
