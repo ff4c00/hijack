@@ -7,7 +7,7 @@
   - [软件环境](#软件环境)
 - [项目初始化](#项目初始化)
   - [创建文件夹](#创建文件夹)
-  - [npm init](#npm-init)
+  - [项目初始化](#项目初始化-1)
 - [package.json](#packagejson)
   - [scripts](#scripts)
   - [npm install](#npm-install)
@@ -21,6 +21,8 @@
   - [views](#views)
     - [index.vue](#indexvue)
   - [.babelrc](#babelrc)
+    - [什么是babel](#什么是babel)
+    - [babel的配置文件](#babel的配置文件)
 
 <!-- /TOC -->
 
@@ -94,7 +96,7 @@ xml-loader|1.2.1
 > 纪要
 
 0. 创建文件夹
-0. npm init
+0. 项目初始化
 
 ## 创建文件夹
 
@@ -103,7 +105,7 @@ mkdir ProjectName
 cd ProjectName
 ```
 
-## npm init
+## 项目初始化
 
 ```bash
 # 参数y用于跳过格式,直接全部同意(yes)
@@ -208,7 +210,7 @@ scripts用于存放项目命令.<br>
 }
 
 ```
-npm install用于安装项目所需插件.<br>
+npm install用于安装项目一般所需插件.<br>
 现在执行 npm install来安装这些插件.
 
 # webpack.config.js
@@ -253,7 +255,7 @@ module.exports = {
   },
   mode: "development",
   devtool: 'inline-source-map',// 追踪错误和警告(仅用于开发模式)
-  // 告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
+  // 告知 webpack-dev-server,在 localhost:8080 下建立服务,将 dist 目录下的文件,作为可访问文件.
   devServer: {
     contentBase: './dist',
     hot: true //热更新配置(仅用于开发模式)
@@ -346,7 +348,7 @@ const Routers = [
 ];
 
 const RouterConfig = {
-  // mode: 'history' // 需要服务端的支持
+  // mode: 'history', // 需要服务端的支持
   routes: Routers
 };
 
@@ -357,14 +359,36 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+router.beforeEach((to, from, next) => {
+  window.scrollTo(0, 0);
+  next();
+});
+
 // 路由配置end
+
+// 状态管理
+const store = new Vuex.Store({
+  state: {
+
+  },
+  getters: {
+
+  },
+  mutations: {
+
+  },
+  actions: {
+
+  }
+});
+// 状态管理 end
 
 new Vue({
   el: '#app',
   router: router,
+  store: store,
   render: h => h(App)
 });
-
 ```
 
 ## app.vue
@@ -415,6 +439,18 @@ router/views文件夹用于存放同名路由所对应的组件.
 
 
 ## .babelrc
+
+### 什么是babel
+
+ES6(2015)是下一代javascript语言标准,引入了新的语法和API,但是这些js新特性只被最新版本的浏览器支持.<br>
+低版本浏览器并不支持,那么低版本浏览器下就需要一个转换工具,把es6代码转换成浏览器能识别的代码.<br>
+babel就是这样的一个工具,以理解为 *babel是javascript语法的编译器* .
+
+### babel的配置文件
+
+在Babel执行编译的过程中,会从项目的根目录下的 .babelrc文件中读取配置.
+
+下面是项目中所需的配置:
 
 ```json
 {
