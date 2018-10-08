@@ -106,14 +106,14 @@
   - [12.8. 动态组件](#128-动态组件)
   - [12.9. 解析 DOM 模板时的注意事项](#129-解析-dom-模板时的注意事项)
   - [12.10. X-Templates](#1210-x-templates)
-- [渲染函数](#渲染函数)
-  - [基础](#基础)
-- [工具安装](#工具安装)
-  - [vue-devtools](#vue-devtools)
-    - [克隆项目](#克隆项目)
-    - [vue-devtools-master](#vue-devtools-master)
-      - [shells/chrome/mainifest.json](#shellschromemainifestjson)
-    - [Chrome浏览器](#chrome浏览器)
+- [13. 渲染函数](#13-渲染函数)
+  - [13.1. 基础](#131-基础)
+- [14. 工具安装](#14-工具安装)
+  - [14.1. vue-devtools](#141-vue-devtools)
+    - [14.1.1. 克隆项目](#1411-克隆项目)
+    - [14.1.2. vue-devtools-master](#1412-vue-devtools-master)
+      - [14.1.2.1. shells/chrome/mainifest.json](#14121-shellschromemainifestjson)
+    - [14.1.3. Chrome浏览器](#1413-chrome浏览器)
 
 <!-- /TOC -->
 
@@ -2653,9 +2653,9 @@ Vue提供了另一种定义模板的方式:在\<script\>标签中使用 `text/x-
 
 这种模式再加上gulp或其他构建工具来组织代码结构,用来开发中小型产品不成问题.
 
-# 渲染函数
+# 13. 渲染函数
 
-## 基础
+## 13.1. 基础
 
 Vue 推荐在绝大多数情况下使用 template 来创建的 HTML.<br>
 然而在一些场景中,真的需要 JavaScript 的完全编程的能力,这就是 **render 函数**,它比 template 更接近编译器.<br>
@@ -2738,23 +2738,23 @@ Vue.component('anchored-heading', {
 在这个例子中,需要知道当不使用 `slot` 属性向组件中传递内容时,比如 `anchored-heading` 中的 `Hello world!`,这些子元素被存储在组件实例中的 `$slots.default`中.<br>
 如果还不了解, **在深入 render 函数之前推荐阅读 `实例属性` API.**
 
-# 工具安装
+# 14. 工具安装
 
-## vue-devtools
+## 14.1. vue-devtools
 
-### 克隆项目
+### 14.1.1. 克隆项目
 ```bash
 git clone https://github.com/vuejs/vue-devtools
 ```
 
-### vue-devtools-master
+### 14.1.2. vue-devtools-master
 
 在vue-devtools-master目录下:
 
 0. npm install
 0. npm run build
 
-#### shells/chrome/mainifest.json
+#### 14.1.2.1. shells/chrome/mainifest.json
 
 persistant改为true
 
@@ -2762,7 +2762,7 @@ persistant改为true
 "persistant": true
 ```
 
-### Chrome浏览器
+### 14.1.3. Chrome浏览器
 
 更多工具>扩展程序> **勾选开发者模式**
 

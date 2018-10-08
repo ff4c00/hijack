@@ -11,6 +11,13 @@ const routers = [
     component: (resolve) => require(['@views/home/index'], resolve)
   },
   {
+    path: '/home/development',
+    meta: {
+      title: '开发者页面'
+    },
+    component: (resolve) => require(['@views/home/development'], resolve)
+  },
+  {
     path: '*',
     redirect: '/home/index'
   }

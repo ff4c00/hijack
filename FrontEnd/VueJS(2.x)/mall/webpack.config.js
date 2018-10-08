@@ -66,7 +66,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@views': path.resolve(__dirname, 'views')
+      '@views': path.resolve(__dirname, 'views'),
+      '@components': path.resolve(__dirname, 'components')
     }
   }
 };
