@@ -47,6 +47,20 @@ module.exports = {
         test: /.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+        use:[
+          {
+            loader:'css-loader'
+          },
+          {
+            loader:'sass-loader'
+          }
+        ],
+          fallback:'style-loader'
+        })
       }
     ]
   },
@@ -67,7 +81,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@views': path.resolve(__dirname, 'views'),
-      '@components': path.resolve(__dirname, 'components')
+      '@components': path.resolve(__dirname, 'components'),
+      '@development': path.resolve(__dirname, 'development')
     }
   }
 };

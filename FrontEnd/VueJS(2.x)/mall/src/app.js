@@ -4,6 +4,8 @@ import App from './app.vue';
 import { resolve } from 'url';
 import Vuex from 'vuex';
 import Routers from '../routers/routers.js';
+import './style.scss';
+
 
 Vue.use(VueRouter);
 Vue.use(Vuex);

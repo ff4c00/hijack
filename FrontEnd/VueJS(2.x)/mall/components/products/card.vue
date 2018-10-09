@@ -1,59 +1,90 @@
 <template>
   <div class="root">
+    <router-link :to="'/product/show/'+cardData.id" class="cardMain">
+      <div class="pic">
+        <img :src="cardData.images_path.main"/>
+      </div>
 
-    <div class="pic">
-      商品图片
-    </div>
+      <div class="name">
+        <p>{{cardData.name}}</p>
+      </div>
 
-    <div class="name">
-      商品名称过长测试
-      商品名称过长测试
-      商品名称过长测试
-      商品名称过长测试
-      商品名称过长测试
-      商品名称过长测试
-    </div>
+      <div class="price">
+        <p>&yen;{{cardData.sales.price}}</p>
+      </div>
 
-    <div class="price">
-      商品价格
-    </div>
-
-    <div class="cart">
-      加入购物车
-    </div>
-    <div></div>
+      <div class="cart">
+        <p @click.prevent="handleCart">加入购物车</p>
+      </div>
+    </router-link>
   </div>
 </template>
 
-<style scoped>
-  .root {
-    width: 25%;
-    float: left;
-    margin: 16px;
-    background: rgb(176, 233, 233);
-  }
-  .pic {
-    margin: 16px;
-    padding: 16px;
-    height: 100px;
-    text-align: center;
-    background: rgb(145, 219, 126);
-  }
-  .name {
-    margin: auto;
-    text-align: center;
-    width: 80%;
-    background: rgb(84, 140, 224);
-  }
-  .price {
-    text-align: center;
-    margin: 16px 190px;
-    background: rgb(206, 153, 228);
-  }
-  .cart {
-    margin: 16px 170px;    
-    text-align: center;
-    background: rgb(235, 145, 175);
-  }
-</style>
+<script>
+import {standardColors} from '@development/data';
 
+export default {
+  props: {
+    cardData: Object
+  },
+  data () {
+    return {
+      colors: standardColors
+    }
+  },
+  methods: {
+    handleCart () {
+      this.$store.commit('addCart', this.cardData.id)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+.root {
+  width: 25%;
+  float: left;
+  // background: rgb(176, 233, 233);
+}
+
+.cardMain {
+  display: block;
+  margin: 16px;
+  border: 1px solid #dddee1;
+  border-radius: 6px;
+  overflow: hidden;
+
+  &:hover .name p {
+    color: #0070c9;
+  }
+}
+.pic {
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+  /* background: rgb(145, 219, 126); */
+  img {
+    width: 100%;
+  }
+} 
+.name {
+  margin: auto;
+  width: 80%;
+  /* background: rgb(84, 140, 224); */
+}
+.price {
+  text-align: center;
+  width: 30%;
+  margin: 16px auto;
+  text-align: center;
+  /* background: rgb(206, 153, 228); */
+}
+.cart {
+  margin: auto;    
+  width: 30%;
+  text-align: center;
+  /* background: rgb(235, 145, 175); */
+}
+
+</style>
