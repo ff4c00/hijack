@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div v-for="index in 10" :key="index">
-      <Card :cardData="cardData"></Card>
-    </div>
+    <!-- <Card :cardData="cardData"></Card> -->
   </div>
 </template>
 
@@ -15,7 +13,7 @@ export default {
   components: {Card},
   data () {
     return {
-      cardData: productCardData
+      cardData: productCardData[0]
     }
   }
   

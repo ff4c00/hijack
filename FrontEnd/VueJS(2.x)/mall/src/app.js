@@ -5,6 +5,7 @@ import { resolve } from 'url';
 import Vuex from 'vuex';
 import Routers from '../routers/routers.js';
 import './style.scss';
+import {productCardData} from '@development/data';
 
 
 Vue.use(VueRouter);
@@ -41,16 +42,27 @@ router.beforeEach((to, from, next) => {
 // 状态管理
 const store = new Vuex.Store({
   state: {
-
+    // 商品列表数据
+    productList: [],
+    // 购物车数据
+    cartList: []
   },
   getters: {
 
   },
   mutations: {
-
+    // 商品列表添加数据
+    setProductList (state, data) {
+      state.productList = data;
+    }
   },
   actions: {
-
+    // 请求商品列表数据
+    getProductList (context) {
+      setTimeout(() => {
+        context.commit('setProductList', productCardData);
+      }, 500);
+    }
   }
 });
 // 状态管理 end

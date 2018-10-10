@@ -1,7 +1,7 @@
 // 项目初期静态数据文件(为后期后台传参提供示例)
 
 // 商品卡片参数 
-export let productCardData = {
+export let productCardData = [{
   id: 1,
   name: 'Apple AirPods 蓝牙无线耳机 适用于iPhone7/8/X手机耳机',
   brand: 'Apple',
@@ -14,7 +14,7 @@ export let productCardData = {
   },
   cost: 1288,
   color: '白色'
-};
+}];
 
 export let standardColors = {
   '白色': '#ffffff',
