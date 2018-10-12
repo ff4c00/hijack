@@ -18,6 +18,13 @@ const routers = [
     component: (resolve) => require(['@views/products/index'], resolve)
   },
   {
+    path: '/products/show/:id',
+    meta: {
+      title: '商品详情'
+    },
+    component: (resolve) => require(['@views/products/show'], resolve)
+  },
+  {
     path: '/cart/show',
     meta: {
       title: '购物车'

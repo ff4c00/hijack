@@ -39,7 +39,22 @@ router.beforeEach((to, from, next) => {
 
 // 路由配置end
 
+
 // 状态管理
+
+function uniqArray (array) {
+  const res = [];
+  const json = {};
+  for (let i = 0; i < array.length; i++) {
+    const _self = array[i];
+    if (!json[_self]) {
+      res.push(_self);
+      json[_self] = 1;
+    }
+  }
+  return res;
+};
+
 const store = new Vuex.Store({
   state: {
     // 商品列表数据
@@ -48,7 +63,14 @@ const store = new Vuex.Store({
     cartList: []
   },
   getters: {
-
+    brands: state => {
+      const brands = state.productList.map(item => item.brand);
+      return uniqArray(brands);
+    },
+    colors: states => {
+      const colors = states.productList.map(item => item.color);
+      return uniqArray(colors);
+    }
   },
   mutations: {
     // 商品列表添加数据

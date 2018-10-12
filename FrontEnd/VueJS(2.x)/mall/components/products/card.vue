@@ -10,7 +10,7 @@
       </div>
 
       <div class="product-price">
-        <p>&yen;{{cardData.sales.price}}</p>
+        <p>&yen;{{cardData.prices.price}}</p>
       </div>
 
       <div class="product-cart">
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 
 .product {
-  width: 25%;
+  width: 16%;
   float: left;
   // background: rgb(176, 233, 233);
   &-main {
@@ -59,7 +59,6 @@ export default {
   }
   &-pic {
     margin: 16px;
-    padding: 16px;
     text-align: center;
     /* background: rgb(145, 219, 126); */
     img {
