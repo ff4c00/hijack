@@ -23,7 +23,7 @@ chsh -s /usr/bin/fish
 
 ## 2.1. 自动建议
 
-> Fish 会自动在光标后面给出建议,表示可能的选项,颜色为灰色。
+> Fish 会自动在光标后面给出建议,表示可能的选项,颜色为灰色.
 
 如果采纳建议,可以按下 `→`
 
@@ -32,7 +32,7 @@ chsh -s /usr/bin/fish
 # 3. 函数
 
 > Fish implements aliases using functions. Use 'functions' builtin to see list of functions and 'functions function_name' to see function definition.<br>
-FISH使用函数实现别名.使用“函数”建立函数列表和函数“函数名”来查看函数定义.
+Fish使用函数实现别名.使用“函数”建立函数列表和函数“函数名”来查看函数定义.
 
 正如上述,Fish中不支持alias命令建立别名,需要使用函数替代相关操作.
 
