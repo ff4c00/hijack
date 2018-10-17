@@ -189,8 +189,10 @@ scripts用于存放项目命令.<br>
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.10",
+    "node-sass": "^4.9.3",
     "now": "^11.4.1",
     "papaparse": "^4.6.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "vue-hot-reload-api": "^2.3.0",
     "vue-loader": "^15.4.1",
@@ -255,7 +257,7 @@ module.exports = {
   },
   mode: "development",
   devtool: 'inline-source-map',// 追踪错误和警告(仅用于开发模式)
-  // 告知 webpack-dev-server,在 localhost:8080 下建立服务,将 dist 目录下的文件,作为可访问文件.
+  // 告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
   devServer: {
     contentBase: './dist',
     hot: true //热更新配置(仅用于开发模式)
@@ -285,6 +287,20 @@ module.exports = {
         test: /.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+        use:[
+          {
+            loader:'css-loader'
+          },
+          {
+            loader:'sass-loader'
+          }
+        ],
+          fallback:'style-loader'
+        })
       }
     ]
   },
@@ -300,10 +316,17 @@ module.exports = {
       filename: '[name].css',
       allChunks: true
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@views': path.resolve(__dirname, 'views'),
+      '@components': path.resolve(__dirname, 'components'),
+      '@development': path.resolve(__dirname, 'development')
+    }
+  }
 };
 ```
-
 
 # src
 
