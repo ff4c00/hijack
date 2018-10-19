@@ -21,7 +21,7 @@
     </el-menu>
   </div>
 
-  <div class="root-sidebar">
+  <!-- <div class="root-sidebar">
     <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
@@ -58,7 +58,7 @@
         <span slot="title">导航四</span>
       </el-menu-item>
     </el-menu>
-  </div>
+  </div> -->
 
   <div class="root-main-view">
     <router-view ></router-view>    
@@ -104,15 +104,14 @@ export default {
 
 .root {
   &-sidebar {
-    width: 200px;
+    width: auto;
     float: left;
   }
 
   &-main-view {
     margin: 32px;
     float: left;
-    // height: 100%;
-    height: 500px;
+    width: 98%;
   }
 
 }
