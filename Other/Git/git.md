@@ -8,6 +8,7 @@
   - [1.5. 撤销](#15-撤销)
   - [1.6. 分支](#16-分支)
   - [头指针分离](#头指针分离)
+  - [帐号缓存](#帐号缓存)
 
 <!-- /TOC -->
 # 1. 常用操作
@@ -80,6 +81,17 @@ $ git branch -f master HEAD
 # 检出 master 分支
 $ git checkout master
 ```
+
+## 帐号缓存
+
+在输入帐号密码后:
+
+```
+git config --global credential.helper  'cache --timeout 36000000000'
+```
+
+3600为缓存秒数.
+
 <hr>
 
 >[博客园 | 天才卧龙](https://www.cnblogs.com/chenwolong/p/GIT.html)
