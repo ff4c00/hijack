@@ -25,8 +25,8 @@
   - [1.11. 时间](#111-时间)
     - [1.11.1. 常用函数](#1111-常用函数)
     - [1.11.2. 时间格式化](#1112-时间格式化)
-      - [指定日期格式](#指定日期格式)
-      - [to_s(:number)](#to_snumber)
+      - [1.11.2.1. 指定日期格式](#11121-指定日期格式)
+      - [1.11.2.2. to_s(:number)](#11122-to_snumber)
   - [1.12. 数据结构](#112-数据结构)
     - [1.12.1. 数组](#1121-数组)
       - [1.12.1.1. 常用方法](#11211-常用方法)
@@ -106,98 +106,100 @@
       - [2.2.2.1. ransack](#2221-ransack)
         - [2.2.2.1.1. 简介](#22211-简介)
         - [2.2.2.1.2. 常用搜索条件](#22212-常用搜索条件)
-    - [2.2.4. 权限控制](#224-权限控制)
-      - [2.2.4.1. cancancan](#2241-cancancan)
-      - [2.2.4.2. pundit](#2242-pundit)
-      - [2.2.4.3. Policy](#2243-policy)
-    - [2.2.5. 分页](#225-分页)
-      - [2.2.5.1. Kaminari](#2251-kaminari)
-        - [2.2.5.1.1. 什么是kaminari](#22511-什么是kaminari)
-        - [2.2.5.1.2. 如何使用kaminari](#22512-如何使用kaminari)
-      - [2.2.5.2. will_paginate](#2252-will_paginate)
-    - [2.2.6. 表单请求](#226-表单请求)
-      - [2.2.6.1. simple_form](#2261-simple_form)
-    - [2.2.7. 表格展示](#227-表格展示)
-      - [2.2.7.1. jqgird](#2271-jqgird)
-    - [2.2.8. excelc处理](#228-excelc处理)
-      - [2.2.8.1. spreadsheet](#2281-spreadsheet)
-    - [2.2.9. 图片上传](#229-图片上传)
-      - [2.2.9.1. carrierwave](#2291-carrierwave)
-      - [2.2.9.2. paperclip](#2292-paperclip)
-    - [2.2.10. 定时任务](#2210-定时任务)
-      - [2.2.10.1. whenever](#22101-whenever)
-        - [2.2.10.1.1. 查看定时任务列表](#221011-查看定时任务列表)
-        - [2.2.10.1.2. 更新定时任务列表](#221012-更新定时任务列表)
-      - [2.2.10.2. resque](#22102-resque)
-      - [2.2.10.3. clock](#22103-clock)
-    - [2.2.11. 异步任务](#2211-异步任务)
-      - [2.2.11.1. sidekiq+sidetip](#22111-sidekiqsidetip)
-    - [2.2.12. 接口对接处理](#2212-接口对接处理)
-      - [2.2.12.1. rest-client](#22121-rest-client)
-      - [2.2.12.2. httparty](#22122-httparty)
-    - [2.2.13. 富文本编辑器](#2213-富文本编辑器)
-      - [2.2.13.1. kindeditor](#22131-kindeditor)
-      - [2.2.13.2. ckeditor](#22132-ckeditor)
-      - [2.2.13.3. ueditor](#22133-ueditor)
-    - [2.2.14. 异常记录](#2214-异常记录)
-      - [2.2.14.1. exception_notification](#22141-exception_notification)
-    - [2.2.15. bug调试](#2215-bug调试)
-      - [2.2.15.1. pry-rails](#22151-pry-rails)
-      - [2.2.15.2. pry-byebug](#22152-pry-byebug)
-    - [2.2.16. 接口制作](#2216-接口制作)
-      - [2.2.16.1. grape](#22161-grape)
-    - [2.2.17. 用户管理](#2217-用户管理)
-      - [2.2.17.1. devise(用户管理/注册/三方平台账号登陆/跟踪用户的登入次数,时间戳和 IP/)](#22171-devise用户管理注册三方平台账号登陆跟踪用户的登入次数时间戳和-ip)
-    - [2.2.18. 测试](#2218-测试)
-      - [2.2.18.1. shoulda-matchers](#22181-shoulda-matchers)
-        - [2.2.18.1.1. rspec-rails](#221811-rspec-rails)
-      - [2.2.18.2. guard-rspec/factory_gril](#22182-guard-rspecfactory_gril)
-      - [2.2.18.3. minitest](#22183-minitest)
-    - [2.2.19. 验证码](#2219-验证码)
-      - [2.2.19.1. simple_captcha2](#22191-simple_captcha2)
-    - [2.2.20. xml解析](#2220-xml解析)
-      - [2.2.20.1. nokorigi](#22201-nokorigi)
-      - [2.2.20.2. settingslogic](#22202-settingslogic)
-    - [2.2.21. 状态机](#2221-状态机)
-      - [2.2.21.1. aasm](#22211-aasm)
-      - [2.2.21.2. workflow](#22212-workflow)
-    - [2.2.22. 二维码](#2222-二维码)
-      - [2.2.22.1. rqrcode](#22221-rqrcode)
-    - [2.2.23. 打包](#2223-打包)
-      - [2.2.23.1. rubyzip](#22231-rubyzip)
-    - [2.2.24. 树形结构数据库](#2224-树形结构数据库)
-      - [2.2.24.1. ancestry](#22241-ancestry)
-    - [2.2.25. 静态配置](#2225-静态配置)
-      - [2.2.25.1. rails-settings-cached](#22251-rails-settings-cached)
-    - [2.2.26. pdf](#2226-pdf)
-      - [2.2.26.1. wicked_pdf/wkhtmltopdf-binary](#22261-wicked_pdfwkhtmltopdf-binary)
-      - [2.2.26.2. pdfjs_viewer-rails](#22262-pdfjs_viewer-rails)
-      - [2.2.26.3. prawn/prawn-table](#22263-prawnprawn-table)
-    - [2.2.27. 审核记录](#2227-审核记录)
-      - [2.2.27.1. audited](#22271-audited)
-    - [2.2.28. 内存数据库](#2228-内存数据库)
-      - [2.2.28.1. redis/redis-namespace](#22281-redisredis-namespace)
-    - [2.2.29. 快照](#2229-快照)
-      - [2.2.29.1. wkhtmltoimage-binary](#22291-wkhtmltoimage-binary)
-    - [2.2.30. 中文转拼音](#2230-中文转拼音)
-      - [2.2.30.1. ruby-pinyin](#22301-ruby-pinyin)
-    - [2.2.31. 视频处理](#2231-视频处理)
-      - [2.2.31.1. streamio-ffmpeg](#22311-streamio-ffmpeg)
-    - [2.2.32. word转pdf](#2232-word转pdf)
-      - [2.2.32.1. libreconv](#22321-libreconv)
-    - [2.2.33. webservice](#2233-webservice)
-      - [2.2.33.1. 服务端](#22331-服务端)
-        - [2.2.33.1.1. wash_out](#223311-wash_out)
-      - [2.2.33.2. 客户端](#22332-客户端)
-        - [2.2.33.2.1. savon](#223321-savon)
-    - [2.2.34. 批量导入数据库](#2234-批量导入数据库)
-      - [2.2.34.1. activerecord-import](#22341-activerecord-import)
-    - [2.2.35. 服务](#2235-服务)
-      - [2.2.35.1. thin](#22351-thin)
-      - [2.2.35.2. puma](#22352-puma)
-      - [2.2.35.3. passenger](#22353-passenger)
-    - [2.2.36. 数据库备份](#2236-数据库备份)
-      - [2.2.36.1. backup](#22361-backup)
+    - [2.2.3. 权限控制](#223-权限控制)
+      - [2.2.3.1. cancancan](#2231-cancancan)
+      - [2.2.3.2. pundit](#2232-pundit)
+      - [2.2.3.3. Policy](#2233-policy)
+    - [2.2.4. 分页](#224-分页)
+      - [2.2.4.1. Kaminari](#2241-kaminari)
+        - [2.2.4.1.1. 什么是kaminari](#22411-什么是kaminari)
+        - [2.2.4.1.2. 如何使用kaminari](#22412-如何使用kaminari)
+      - [2.2.4.2. will_paginate](#2242-will_paginate)
+    - [2.2.5. 表单请求](#225-表单请求)
+      - [2.2.5.1. simple_form](#2251-simple_form)
+    - [2.2.6. 表格展示](#226-表格展示)
+      - [2.2.6.1. jqgird](#2261-jqgird)
+    - [2.2.7. excelc处理](#227-excelc处理)
+      - [2.2.7.1. spreadsheet](#2271-spreadsheet)
+    - [2.2.8. 图片上传](#228-图片上传)
+      - [2.2.8.1. carrierwave](#2281-carrierwave)
+      - [2.2.8.2. paperclip](#2282-paperclip)
+    - [2.2.9. 定时任务](#229-定时任务)
+      - [2.2.9.1. whenever](#2291-whenever)
+        - [2.2.9.1.1. 查看定时任务列表](#22911-查看定时任务列表)
+        - [2.2.9.1.2. 更新定时任务列表](#22912-更新定时任务列表)
+      - [2.2.9.2. resque](#2292-resque)
+      - [2.2.9.3. clock](#2293-clock)
+    - [2.2.10. 异步任务](#2210-异步任务)
+      - [2.2.10.1. sidekiq+sidetip](#22101-sidekiqsidetip)
+    - [2.2.11. 接口对接处理](#2211-接口对接处理)
+      - [2.2.11.1. rest-client](#22111-rest-client)
+      - [2.2.11.2. httparty](#22112-httparty)
+    - [2.2.12. 富文本编辑器](#2212-富文本编辑器)
+      - [2.2.12.1. kindeditor](#22121-kindeditor)
+      - [2.2.12.2. ckeditor](#22122-ckeditor)
+      - [2.2.12.3. ueditor](#22123-ueditor)
+    - [2.2.13. 异常记录](#2213-异常记录)
+      - [2.2.13.1. exception_notification](#22131-exception_notification)
+    - [2.2.14. bug调试](#2214-bug调试)
+      - [2.2.14.1. pry-rails](#22141-pry-rails)
+      - [2.2.14.2. pry-byebug](#22142-pry-byebug)
+    - [2.2.15. 接口制作](#2215-接口制作)
+      - [2.2.15.1. grape](#22151-grape)
+    - [2.2.16. 用户管理](#2216-用户管理)
+      - [2.2.16.1. devise(用户管理/注册/三方平台账号登陆/跟踪用户的登入次数,时间戳和 IP/)](#22161-devise用户管理注册三方平台账号登陆跟踪用户的登入次数时间戳和-ip)
+    - [2.2.17. 测试](#2217-测试)
+      - [2.2.17.1. shoulda-matchers](#22171-shoulda-matchers)
+        - [2.2.17.1.1. rspec-rails](#221711-rspec-rails)
+      - [2.2.17.2. guard-rspec/factory_gril](#22172-guard-rspecfactory_gril)
+      - [2.2.17.3. minitest](#22173-minitest)
+    - [2.2.18. 验证码](#2218-验证码)
+      - [2.2.18.1. simple_captcha2](#22181-simple_captcha2)
+    - [2.2.19. xml解析](#2219-xml解析)
+      - [2.2.19.1. nokorigi](#22191-nokorigi)
+      - [2.2.19.2. settingslogic](#22192-settingslogic)
+    - [2.2.20. 状态机](#2220-状态机)
+      - [2.2.20.1. aasm](#22201-aasm)
+      - [2.2.20.2. workflow](#22202-workflow)
+    - [2.2.21. 二维码](#2221-二维码)
+      - [2.2.21.1. rqrcode](#22211-rqrcode)
+    - [2.2.22. 打包](#2222-打包)
+      - [2.2.22.1. rubyzip](#22221-rubyzip)
+    - [2.2.23. 树形结构数据库](#2223-树形结构数据库)
+      - [2.2.23.1. ancestry](#22231-ancestry)
+    - [2.2.24. 静态配置](#2224-静态配置)
+      - [2.2.24.1. rails-settings-cached](#22241-rails-settings-cached)
+    - [2.2.25. pdf](#2225-pdf)
+      - [2.2.25.1. wicked_pdf/wkhtmltopdf-binary](#22251-wicked_pdfwkhtmltopdf-binary)
+      - [2.2.25.2. pdfjs_viewer-rails](#22252-pdfjs_viewer-rails)
+      - [2.2.25.3. prawn/prawn-table](#22253-prawnprawn-table)
+    - [2.2.26. 审核记录](#2226-审核记录)
+      - [2.2.26.1. audited](#22261-audited)
+    - [2.2.27. 内存数据库](#2227-内存数据库)
+      - [2.2.27.1. redis/redis-namespace](#22271-redisredis-namespace)
+    - [2.2.28. 快照](#2228-快照)
+      - [2.2.28.1. wkhtmltoimage-binary](#22281-wkhtmltoimage-binary)
+    - [2.2.29. 中文转拼音](#2229-中文转拼音)
+      - [2.2.29.1. ruby-pinyin](#22291-ruby-pinyin)
+    - [2.2.30. 视频处理](#2230-视频处理)
+      - [2.2.30.1. streamio-ffmpeg](#22301-streamio-ffmpeg)
+    - [2.2.31. word转pdf](#2231-word转pdf)
+      - [2.2.31.1. libreconv](#22311-libreconv)
+    - [2.2.32. webservice](#2232-webservice)
+      - [2.2.32.1. 服务端](#22321-服务端)
+        - [2.2.32.1.1. wash_out](#223211-wash_out)
+      - [2.2.32.2. 客户端](#22322-客户端)
+        - [2.2.32.2.1. savon](#223221-savon)
+    - [2.2.33. 批量导入数据库](#2233-批量导入数据库)
+      - [2.2.33.1. activerecord-import](#22331-activerecord-import)
+    - [2.2.34. 服务](#2234-服务)
+      - [2.2.34.1. thin](#22341-thin)
+      - [2.2.34.2. puma](#22342-puma)
+      - [2.2.34.3. passenger](#22343-passenger)
+    - [2.2.35. 数据库备份](#2235-数据库备份)
+      - [2.2.35.1. backup](#22351-backup)
+    - [2.2.36. 大写金额](#2236-大写金额)
+      - [2.2.36.1. number_to_capital_zh](#22361-number_to_capital_zh)
 
 <!-- /TOC -->
 # 1. Ruby基础
@@ -519,11 +521,11 @@ Time.now.end_of_year|获取当年结束时间|2018-12-31 23:59:59 +0800
 
 ### 1.11.2. 时间格式化
 
-#### 指定日期格式
+#### 1.11.2.1. 指定日期格式
 
 Time.now.strftime("%Y-%m-%d %H:%M:%S")
 
-#### to_s(:number)
+#### 1.11.2.2. to_s(:number)
 
 获取指定日期的数字部分
 
@@ -1526,15 +1528,15 @@ not_null|不是null
 [RubyChina-开源项目 ransack 搜索条件](https://ruby-china.org/topics/29556)
 
 
-### 2.2.4. 权限控制
-#### 2.2.4.1. cancancan
-#### 2.2.4.2. pundit
-#### 2.2.4.3. Policy
+### 2.2.3. 权限控制
+#### 2.2.3.1. cancancan
+#### 2.2.3.2. pundit
+#### 2.2.3.3. Policy
 
-### 2.2.5. 分页
-#### 2.2.5.1. Kaminari
-##### 2.2.5.1.1. 什么是kaminari
-##### 2.2.5.1.2. 如何使用kaminari
+### 2.2.4. 分页
+#### 2.2.4.1. Kaminari
+##### 2.2.4.1.1. 什么是kaminari
+##### 2.2.4.1.2. 如何使用kaminari
 
 <hr>
 
@@ -1542,133 +1544,137 @@ not_null|不是null
 
 > [CSDN-分页插件Kaminari](https://blog.csdn.net/qwbtc/article/details/52035491)
 
-#### 2.2.5.2. will_paginate
+#### 2.2.4.2. will_paginate
 
-### 2.2.6. 表单请求
-#### 2.2.6.1. simple_form
+### 2.2.5. 表单请求
+#### 2.2.5.1. simple_form
 
-### 2.2.7. 表格展示
-#### 2.2.7.1. jqgird
+### 2.2.6. 表格展示
+#### 2.2.6.1. jqgird
 
-### 2.2.8. excelc处理
-#### 2.2.8.1. spreadsheet
+### 2.2.7. excelc处理
+#### 2.2.7.1. spreadsheet
 
-### 2.2.9. 图片上传
-#### 2.2.9.1. carrierwave
-#### 2.2.9.2. paperclip
+### 2.2.8. 图片上传
+#### 2.2.8.1. carrierwave
+#### 2.2.8.2. paperclip
 
-### 2.2.10. 定时任务
-#### 2.2.10.1. whenever
-##### 2.2.10.1.1. 查看定时任务列表
+### 2.2.9. 定时任务
+#### 2.2.9.1. whenever
+##### 2.2.9.1.1. 查看定时任务列表
 
 ```shell
 whenever -l
 ```
 
-##### 2.2.10.1.2. 更新定时任务列表
+##### 2.2.9.1.2. 更新定时任务列表
 
 ```shell
 whenever -i
 ```
-#### 2.2.10.2. resque
-#### 2.2.10.3. clock
+#### 2.2.9.2. resque
+#### 2.2.9.3. clock
 
-### 2.2.11. 异步任务
-#### 2.2.11.1. sidekiq+sidetip
+### 2.2.10. 异步任务
+#### 2.2.10.1. sidekiq+sidetip
 
-### 2.2.12. 接口对接处理
-#### 2.2.12.1. rest-client
-#### 2.2.12.2. httparty
+### 2.2.11. 接口对接处理
+#### 2.2.11.1. rest-client
+#### 2.2.11.2. httparty
 
-### 2.2.13. 富文本编辑器
-#### 2.2.13.1. kindeditor
-#### 2.2.13.2. ckeditor
-#### 2.2.13.3. ueditor
+### 2.2.12. 富文本编辑器
+#### 2.2.12.1. kindeditor
+#### 2.2.12.2. ckeditor
+#### 2.2.12.3. ueditor
 
-### 2.2.14. 异常记录
-#### 2.2.14.1. exception_notification
+### 2.2.13. 异常记录
+#### 2.2.13.1. exception_notification
 
-### 2.2.15. bug调试
-#### 2.2.15.1. pry-rails
-#### 2.2.15.2. pry-byebug
+### 2.2.14. bug调试
+#### 2.2.14.1. pry-rails
+#### 2.2.14.2. pry-byebug
 
-### 2.2.16. 接口制作
-#### 2.2.16.1. grape
+### 2.2.15. 接口制作
+#### 2.2.15.1. grape
 
-### 2.2.17. 用户管理
-#### 2.2.17.1. devise(用户管理/注册/三方平台账号登陆/跟踪用户的登入次数,时间戳和 IP/)
-
-
-### 2.2.18. 测试
-#### 2.2.18.1. shoulda-matchers
-##### 2.2.18.1.1. rspec-rails
-#### 2.2.18.2. guard-rspec/factory_gril
-#### 2.2.18.3. minitest
-
-### 2.2.19. 验证码
-#### 2.2.19.1. simple_captcha2
-
-### 2.2.20. xml解析
-#### 2.2.20.1. nokorigi
-#### 2.2.20.2. settingslogic
+### 2.2.16. 用户管理
+#### 2.2.16.1. devise(用户管理/注册/三方平台账号登陆/跟踪用户的登入次数,时间戳和 IP/)
 
 
-### 2.2.21. 状态机
-#### 2.2.21.1. aasm
-#### 2.2.21.2. workflow
+### 2.2.17. 测试
+#### 2.2.17.1. shoulda-matchers
+##### 2.2.17.1.1. rspec-rails
+#### 2.2.17.2. guard-rspec/factory_gril
+#### 2.2.17.3. minitest
+
+### 2.2.18. 验证码
+#### 2.2.18.1. simple_captcha2
+
+### 2.2.19. xml解析
+#### 2.2.19.1. nokorigi
+#### 2.2.19.2. settingslogic
+
+
+### 2.2.20. 状态机
+#### 2.2.20.1. aasm
+#### 2.2.20.2. workflow
 [gem-workflow](https://rubygems.org/gems/workflow/)
 
 
-### 2.2.22. 二维码
-#### 2.2.22.1. rqrcode
+### 2.2.21. 二维码
+#### 2.2.21.1. rqrcode
 
-### 2.2.23. 打包
-#### 2.2.23.1. rubyzip
+### 2.2.22. 打包
+#### 2.2.22.1. rubyzip
 
-### 2.2.24. 树形结构数据库
-#### 2.2.24.1. ancestry
+### 2.2.23. 树形结构数据库
+#### 2.2.23.1. ancestry
 
 > [GitHub | ancestry](https://github.com/stefankroes/ancestry)
 
-### 2.2.25. 静态配置
-#### 2.2.25.1. rails-settings-cached
+### 2.2.24. 静态配置
+#### 2.2.24.1. rails-settings-cached
 
-### 2.2.26. pdf
-#### 2.2.26.1. wicked_pdf/wkhtmltopdf-binary
-#### 2.2.26.2. pdfjs_viewer-rails
-#### 2.2.26.3. prawn/prawn-table
+### 2.2.25. pdf
+#### 2.2.25.1. wicked_pdf/wkhtmltopdf-binary
+#### 2.2.25.2. pdfjs_viewer-rails
+#### 2.2.25.3. prawn/prawn-table
 
-### 2.2.27. 审核记录
-#### 2.2.27.1. audited
+### 2.2.26. 审核记录
+#### 2.2.26.1. audited
 
-### 2.2.28. 内存数据库
-#### 2.2.28.1. redis/redis-namespace
+### 2.2.27. 内存数据库
+#### 2.2.27.1. redis/redis-namespace
 
-### 2.2.29. 快照
-#### 2.2.29.1. wkhtmltoimage-binary
+### 2.2.28. 快照
+#### 2.2.28.1. wkhtmltoimage-binary
 
-### 2.2.30. 中文转拼音
-#### 2.2.30.1. ruby-pinyin
+### 2.2.29. 中文转拼音
+#### 2.2.29.1. ruby-pinyin
 
-### 2.2.31. 视频处理
-#### 2.2.31.1. streamio-ffmpeg
+### 2.2.30. 视频处理
+#### 2.2.30.1. streamio-ffmpeg
 
-### 2.2.32. word转pdf
-#### 2.2.32.1. libreconv
+### 2.2.31. word转pdf
+#### 2.2.31.1. libreconv
 
-### 2.2.33. webservice
-#### 2.2.33.1. 服务端
-##### 2.2.33.1.1. wash_out
-#### 2.2.33.2. 客户端
-##### 2.2.33.2.1. savon
+### 2.2.32. webservice
+#### 2.2.32.1. 服务端
+##### 2.2.32.1.1. wash_out
+#### 2.2.32.2. 客户端
+##### 2.2.32.2.1. savon
 
-### 2.2.34. 批量导入数据库
-#### 2.2.34.1. activerecord-import
+### 2.2.33. 批量导入数据库
+#### 2.2.33.1. activerecord-import
 
-### 2.2.35. 服务
-#### 2.2.35.1. thin  
-#### 2.2.35.2. puma
-#### 2.2.35.3. passenger
+### 2.2.34. 服务
+#### 2.2.34.1. thin  
+#### 2.2.34.2. puma
+#### 2.2.34.3. passenger
 
-### 2.2.36. 数据库备份
-#### 2.2.36.1. backup
+### 2.2.35. 数据库备份
+#### 2.2.35.1. backup
+
+### 2.2.36. 大写金额
+
+#### 2.2.36.1. number_to_capital_zh
