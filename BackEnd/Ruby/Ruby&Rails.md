@@ -103,9 +103,6 @@
   - [2.2. 常用GEM](#22-常用gem)
     - [2.2.1. 如何学习/了解插件](#221-如何学习了解插件)
     - [2.2.2. 模糊查询](#222-模糊查询)
-      - [2.2.2.1. ransack](#2221-ransack)
-        - [2.2.2.1.1. 简介](#22211-简介)
-        - [2.2.2.1.2. 常用搜索条件](#22212-常用搜索条件)
     - [2.2.3. 权限控制](#223-权限控制)
       - [2.2.3.1. cancancan](#2231-cancancan)
       - [2.2.3.2. pundit](#2232-pundit)
@@ -161,51 +158,45 @@
     - [2.2.20. 状态机](#2220-状态机)
       - [2.2.20.1. aasm](#22201-aasm)
       - [2.2.20.2. workflow](#22202-workflow)
-    - [2.2.21. 二维码](#2221-二维码)
-      - [2.2.21.1. rqrcode](#22211-rqrcode)
-        - [2.2.21.1.1. 生成二维码](#222111-生成二维码)
-        - [2.2.21.1.2. 二维码展示](#222112-二维码展示)
-    - [2.2.22. 条形码](#2222-条形码)
-      - [2.2.22.1. barby](#22221-barby)
-        - [2.2.22.1.1. 生成二维码](#222211-生成二维码)
-        - [2.2.22.1.2. 展示](#222212-展示)
-    - [2.2.23. 打包](#2223-打包)
-      - [2.2.23.1. rubyzip](#22231-rubyzip)
-    - [2.2.24. 树形结构数据库](#2224-树形结构数据库)
-      - [2.2.24.1. ancestry](#22241-ancestry)
-    - [2.2.25. 静态配置](#2225-静态配置)
-      - [2.2.25.1. rails-settings-cached](#22251-rails-settings-cached)
-    - [2.2.26. pdf](#2226-pdf)
-      - [2.2.26.1. wicked_pdf/wkhtmltopdf-binary](#22261-wicked_pdfwkhtmltopdf-binary)
-      - [2.2.26.2. pdfjs_viewer-rails](#22262-pdfjs_viewer-rails)
-      - [2.2.26.3. prawn/prawn-table](#22263-prawnprawn-table)
-    - [2.2.27. 审核记录](#2227-审核记录)
-      - [2.2.27.1. audited](#22271-audited)
-    - [2.2.28. 内存数据库](#2228-内存数据库)
-      - [2.2.28.1. redis/redis-namespace](#22281-redisredis-namespace)
-    - [2.2.29. 快照](#2229-快照)
-      - [2.2.29.1. wkhtmltoimage-binary](#22291-wkhtmltoimage-binary)
-    - [2.2.30. 中文转拼音](#2230-中文转拼音)
-      - [2.2.30.1. ruby-pinyin](#22301-ruby-pinyin)
-    - [2.2.31. 视频处理](#2231-视频处理)
-      - [2.2.31.1. streamio-ffmpeg](#22311-streamio-ffmpeg)
-    - [2.2.32. word转pdf](#2232-word转pdf)
-      - [2.2.32.1. libreconv](#22321-libreconv)
-    - [2.2.33. webservice](#2233-webservice)
-      - [2.2.33.1. 服务端](#22331-服务端)
-        - [2.2.33.1.1. wash_out](#223311-wash_out)
-      - [2.2.33.2. 客户端](#22332-客户端)
-        - [2.2.33.2.1. savon](#223321-savon)
-    - [2.2.34. 批量导入数据库](#2234-批量导入数据库)
-      - [2.2.34.1. activerecord-import](#22341-activerecord-import)
-    - [2.2.35. 服务](#2235-服务)
-      - [2.2.35.1. thin](#22351-thin)
-      - [2.2.35.2. puma](#22352-puma)
-      - [2.2.35.3. passenger](#22353-passenger)
-    - [2.2.36. 数据库备份](#2236-数据库备份)
-      - [2.2.36.1. backup](#22361-backup)
-    - [2.2.37. 大写金额](#2237-大写金额)
-      - [2.2.37.1. number_to_capital_zh](#22371-number_to_capital_zh)
+    - [2.2.21. 二维码&条形码](#2221-二维码条形码)
+      - [2.2.21.1. rqrcode&barby](#22211-rqrcodebarby)
+    - [2.2.22. 打包](#2222-打包)
+      - [2.2.22.1. rubyzip](#22221-rubyzip)
+    - [2.2.23. 树形结构数据库](#2223-树形结构数据库)
+      - [2.2.23.1. ancestry](#22231-ancestry)
+    - [2.2.24. 静态配置](#2224-静态配置)
+      - [2.2.24.1. rails-settings-cached](#22241-rails-settings-cached)
+    - [2.2.25. pdf](#2225-pdf)
+      - [2.2.25.1. wicked_pdf/wkhtmltopdf-binary](#22251-wicked_pdfwkhtmltopdf-binary)
+      - [2.2.25.2. pdfjs_viewer-rails](#22252-pdfjs_viewer-rails)
+      - [2.2.25.3. prawn/prawn-table](#22253-prawnprawn-table)
+    - [2.2.26. 审核记录](#2226-审核记录)
+      - [2.2.26.1. audited](#22261-audited)
+    - [2.2.27. 内存数据库](#2227-内存数据库)
+      - [2.2.27.1. redis/redis-namespace](#22271-redisredis-namespace)
+    - [2.2.28. 快照](#2228-快照)
+      - [2.2.28.1. wkhtmltoimage-binary](#22281-wkhtmltoimage-binary)
+    - [2.2.29. 中文转拼音](#2229-中文转拼音)
+      - [2.2.29.1. ruby-pinyin](#22291-ruby-pinyin)
+    - [2.2.30. 视频处理](#2230-视频处理)
+      - [2.2.30.1. streamio-ffmpeg](#22301-streamio-ffmpeg)
+    - [2.2.31. word转pdf](#2231-word转pdf)
+      - [2.2.31.1. libreconv](#22311-libreconv)
+    - [2.2.32. webservice](#2232-webservice)
+      - [2.2.32.1. 服务端](#22321-服务端)
+        - [2.2.32.1.1. wash_out](#223211-wash_out)
+      - [2.2.32.2. 客户端](#22322-客户端)
+        - [2.2.32.2.1. savon](#223221-savon)
+    - [2.2.33. 批量导入数据库](#2233-批量导入数据库)
+      - [2.2.33.1. activerecord-import](#22331-activerecord-import)
+    - [2.2.34. 服务](#2234-服务)
+      - [2.2.34.1. thin](#22341-thin)
+      - [2.2.34.2. puma](#22342-puma)
+      - [2.2.34.3. passenger](#22343-passenger)
+    - [2.2.35. 数据库备份](#2235-数据库备份)
+      - [2.2.35.1. backup](#22351-backup)
+    - [2.2.36. 大写金额](#2236-大写金额)
+      - [2.2.36.1. number_to_capital_zh](#22361-number_to_capital_zh)
 
 <!-- /TOC -->
 # 1. Ruby基础
@@ -1469,70 +1460,8 @@ end
 0. 了解插件的常见问题及解决方法
 
 ### 2.2.2. 模糊查询
-#### 2.2.2.1. ransack
-##### 2.2.2.1.1. 简介
-ransack 是一个支持排序的模糊搜索插件.
-##### 2.2.2.1.2. 常用搜索条件
-条件|含义
--|-
-eq|等于
-eq_any|等于任意值
-eq_all|等于所有值
-not_eq|不等于
-not_eq_any|不等于任意值
-not_eq_all|不等于所有值
-matches|符合
-matches_any|符合任意条件
-matches_all|符合所有条件
-does_not_match|不符合
-does_not_match_any|符合任意条件
-does_not_match_all|不符合所有条件
-lt|小于
-lt_any|小于任意一个值
-lt_all|小于所有值
-lteq|小于等于
-lteq_any|小于等于任意一个值
-lteq_all|小于等于所有值
-gt|大于
-gt_any|大于任意一个值
-gt_all|大于所有值
-gteq|大于等于
-gteq_any|大于等于任意一个值
-gteq_all|大于等于所有值
-in|被包含
-in_any|被任意值包含
-in_all|被所有值包含
-not_in|不被包含
-not_in_any|不被任意值包含
-not_in_all|不被所有值包含
-cont|包含
-cont_any|包含任意一个值
-cont_all|包含所有值
-not_cont|不包含
-not_cont_any|不包含任意一个值
-not_cont_all|不包含所有值
-start|以改值开始
-start_any|以任意一个值开始
-start_all|以所有值开始
-not_start|不以改值开始
-not_start_any|不以任意一个值开始
-not_start_all|不以所有值开始
-end|以改值结尾
-end_any|以任意一个值结尾
-end_all|以所有值结尾
-not_end|不以改值结尾
-not_end_any|不以任意一个值结尾
-not_end_all|不以所有值结尾
-'true'|等于true
-'false'|等于false
-present|有值
-blank|为空
-'null'|是null
-not_null|不是null
 
------
-[RubyChina-开源项目 ransack 搜索条件](https://ruby-china.org/topics/29556)
-
+> [ransack](./Gems/ransack.md)
 
 ### 2.2.3. 权限控制
 #### 2.2.3.1. cancancan
@@ -1627,125 +1556,63 @@ whenever -i
 [gem-workflow](https://rubygems.org/gems/workflow/)
 
 
-### 2.2.21. 二维码
-#### 2.2.21.1. rqrcode
+### 2.2.21. 二维码&条形码
+#### 2.2.21.1. rqrcode&barby
 
-##### 2.2.21.1.1. 生成二维码
-
-```ruby
-@qr = RQRCode::QRCode.new("二维码内容")
-```
-
-##### 2.2.21.1.2. 二维码展示
-
-```html
-<style>
-  table {
-    border-width: 0;
-    border-style: none;
-    border-color: #0000ff;
-    border-collapse: collapse;
-  }
-
-  td {
-    border-left: solid 10px #000;
-    padding: 0; 
-    margin: 0; 
-    width: 0px; 
-    height: 10px; 
-  }
-
-  td.black { border-color: #000; }
-  td.white { border-color: #fff; }
-
-  .qr_code table {width: 10px;}
-  .qr_code table tr {height: auto;}
-  .qr_code table td{height: 0;}
-  .qr_code table td.black{border: 2px solid black;}
-  .qr_code table td.white{border: 2px solid white;}
-</style>
-<%= raw @qr.as_html %>
-```
-
-### 2.2.22. 条形码
-
-#### 2.2.22.1. barby 
-
-##### 2.2.22.1.1. 生成二维码
-
-该Gem支持多种常见如HTML,SVG,PDF,PNG等格式条形码,只需加载不同输出器(Outputters)即可.<br>
-这里选用了`SVG`格式输出,其他格式如HTML有遇到页面打印保存为PDF后条形码失真等情况.<br>
-
-```ruby
-require 'barby/barcode/code_128'
-require 'barby/outputter/svg_outputter'
-
-barcode = Barby::Code128B.new('需要展示的内容')
-@outputter = Barby::SvgOutputter.new(barcode).to_svg
-```
-
-##### 2.2.22.1.2. 展示
-
-```html
-<%= @outputter.html_safe %>
-```
-
-<br>
-
-> [GitHub | Barby | Outputters](https://github.com/toretore/barby/wiki/Outputters)
+> [rqrcode&barby](./Gems/rqrcode&barby.md)
 
 
-### 2.2.23. 打包
-#### 2.2.23.1. rubyzip
+### 2.2.22. 打包
+#### 2.2.22.1. rubyzip
 
-### 2.2.24. 树形结构数据库
-#### 2.2.24.1. ancestry
+### 2.2.23. 树形结构数据库
+#### 2.2.23.1. ancestry
 
 > [GitHub | ancestry](https://github.com/stefankroes/ancestry)
 
-### 2.2.25. 静态配置
-#### 2.2.25.1. rails-settings-cached
+### 2.2.24. 静态配置
+#### 2.2.24.1. rails-settings-cached
 
-### 2.2.26. pdf
-#### 2.2.26.1. wicked_pdf/wkhtmltopdf-binary
-#### 2.2.26.2. pdfjs_viewer-rails
-#### 2.2.26.3. prawn/prawn-table
+### 2.2.25. pdf
+#### 2.2.25.1. wicked_pdf/wkhtmltopdf-binary
+#### 2.2.25.2. pdfjs_viewer-rails
+#### 2.2.25.3. prawn/prawn-table
 
-### 2.2.27. 审核记录
-#### 2.2.27.1. audited
+### 2.2.26. 审核记录
+#### 2.2.26.1. audited
 
-### 2.2.28. 内存数据库
-#### 2.2.28.1. redis/redis-namespace
+### 2.2.27. 内存数据库
+#### 2.2.27.1. redis/redis-namespace
 
-### 2.2.29. 快照
-#### 2.2.29.1. wkhtmltoimage-binary
+### 2.2.28. 快照
+#### 2.2.28.1. wkhtmltoimage-binary
 
-### 2.2.30. 中文转拼音
-#### 2.2.30.1. ruby-pinyin
+### 2.2.29. 中文转拼音
+#### 2.2.29.1. ruby-pinyin
 
-### 2.2.31. 视频处理
-#### 2.2.31.1. streamio-ffmpeg
+### 2.2.30. 视频处理
+#### 2.2.30.1. streamio-ffmpeg
 
-### 2.2.32. word转pdf
-#### 2.2.32.1. libreconv
+### 2.2.31. word转pdf
+#### 2.2.31.1. libreconv
 
-### 2.2.33. webservice
-#### 2.2.33.1. 服务端
-##### 2.2.33.1.1. wash_out
-#### 2.2.33.2. 客户端
-##### 2.2.33.2.1. savon
+### 2.2.32. webservice
+#### 2.2.32.1. 服务端
+##### 2.2.32.1.1. wash_out
+#### 2.2.32.2. 客户端
+##### 2.2.32.2.1. savon
 
-### 2.2.34. 批量导入数据库
-#### 2.2.34.1. activerecord-import
+### 2.2.33. 批量导入数据库
+#### 2.2.33.1. activerecord-import
 
-### 2.2.35. 服务
-#### 2.2.35.1. thin  
-#### 2.2.35.2. puma
-#### 2.2.35.3. passenger
+### 2.2.34. 服务
+#### 2.2.34.1. thin  
+#### 2.2.34.2. puma
+#### 2.2.34.3. passenger
 
-### 2.2.36. 数据库备份
-#### 2.2.36.1. backup
+### 2.2.35. 数据库备份
+#### 2.2.35.1. backup
 
-### 2.2.37. 大写金额
+### 2.2.36. 大写金额
 
-#### 2.2.37.1. number_to_capital_zh
+#### 2.2.36.1. number_to_capital_zh
