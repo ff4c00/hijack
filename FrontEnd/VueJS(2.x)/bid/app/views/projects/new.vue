@@ -24,6 +24,10 @@
           <el-input placeholder="请输入联系人姓名" v-model="form.basics.contact_name" clearable></el-input>
         </el-form-item>
 
+        <el-form-item label="联系人电话">
+          <el-input placeholder="请输入联系人电话" v-model="form.basics.contact_tel" clearable></el-input>
+        </el-form-item>
+
         <el-form-item label="是否公开联系方式">
           <el-switch v-model="form.basics.show_contact" active-text="是" inactive-text="否"> </el-switch>
         </el-form-item>

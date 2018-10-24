@@ -21,7 +21,7 @@
         </el-submenu>
       </el-submenu>
       <el-menu-item index="3" disabled>不可点链接</el-menu-item>
-      <el-menu-item index="4"><a href="" target="_blank">后台管理</a></el-menu-item>
+      
     </el-menu>
   </div>
 
@@ -116,6 +116,13 @@ export default {
     margin: 32px;
     float: left;
     width: 98%;
+  }
+
+  &-topbar {
+    &-message {
+      // width: 30px;
+      // height: 30px;
+    }
   }
 
 }
