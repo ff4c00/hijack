@@ -21,3 +21,7 @@ get :public_timeline do
   Status.order(params[ :sort_by])
 end
 ```
+
+<hr>
+
+> [toptal | how-to-build-a-rest-like-api-in-ruby](https://www.toptal.com/ruby/grape-gem-tutorial-how-to-build-a-rest-like-api-in-ruby)

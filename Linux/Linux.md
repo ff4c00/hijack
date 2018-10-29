@@ -8,6 +8,11 @@
   - [1.5. sleep-延迟指定时间](#15-sleep-延迟指定时间)
   - [1.6. tree](#16-tree)
   - [1.7. top](#17-top)
+  - [1.8. apt](#18-apt)
+    - [1.8.1. 更新软件](#181-更新软件)
+    - [1.8.2. 删除软件包](#182-删除软件包)
+  - [1.9. dpkg](#19-dpkg)
+    - [1.9.1. 解决依赖问题](#191-解决依赖问题)
 - [2. 终端](#2-终端)
   - [2.1. 常用快捷键](#21-常用快捷键)
 - [3. 系统报告](#3-系统报告)
@@ -88,6 +93,35 @@ L n| 打印n层目录
 操作项|作用
 -|-
 E|切换内存展示单位
+
+## 1.8. apt
+
+### 1.8.1. 更新软件
+
+```
+sudo apt-get update;sudo apt-get upgrade;sudo apt-get dist-upgrade
+```
+
+### 1.8.2. 删除软件包
+
+参数|区别
+-|-
+remove|会删除软件包,但会保留配置文件
+purge|会将软件包以及配置文件都删除
+
+```
+sudo apt-get remove package-name
+sudo apt-get purge package-name
+```
+
+## 1.9. dpkg
+
+### 1.9.1. 解决依赖问题
+
+```
+sudo apt-get -f -y install
+sudo dpkg -i *.deb
+```
 
 # 2. 终端
 
