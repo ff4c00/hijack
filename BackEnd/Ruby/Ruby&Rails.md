@@ -103,6 +103,8 @@
   - [2.2. 常用GEM](#22-常用gem)
     - [2.2.1. 如何学习/了解插件](#221-如何学习了解插件)
     - [2.2.2. 模糊查询](#222-模糊查询)
+    - [软删除](#软删除)
+      - [paranoia](#paranoia)
     - [2.2.3. 权限控制](#223-权限控制)
       - [2.2.3.1. cancancan](#2231-cancancan)
       - [2.2.3.2. pundit](#2232-pundit)
@@ -1462,6 +1464,12 @@ end
 ### 2.2.2. 模糊查询
 
 > [ransack](./Gems/ransack.md)
+
+### 软删除
+
+#### paranoia
+
+> [paranoia](./Gems/paranoia.md)
 
 ### 2.2.3. 权限控制
 #### 2.2.3.1. cancancan
