@@ -199,6 +199,8 @@
       - [2.2.35.1. backup](#22351-backup)
     - [2.2.36. 大写金额](#2236-大写金额)
       - [2.2.36.1. number_to_capital_zh](#22361-number_to_capital_zh)
+- [还有这种骚操作?](#还有这种骚操作)
+  - [where.not](#wherenot)
 
 <!-- /TOC -->
 # 1. Ruby基础
@@ -1626,3 +1628,11 @@ whenever -i
 ### 2.2.36. 大写金额
 
 #### 2.2.36.1. number_to_capital_zh
+
+# 还有这种骚操作?
+
+## where.not
+
+```ruby
+User.where.not(status: -1).ransack(params[:q])
+```
