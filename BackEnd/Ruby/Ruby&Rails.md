@@ -1642,7 +1642,6 @@ whenever -i
 
 ```ruby
 <%= link_to '补开发票',  make_up_invoice_order_path(order, back: request.fullpath), data: {:disable_with => "提交中..."} %>
-
 ```
 
 # 还有这种骚操作?
