@@ -199,6 +199,9 @@
       - [2.2.35.1. backup](#22351-backup)
     - [2.2.36. 大写金额](#2236-大写金额)
       - [2.2.36.1. number_to_capital_zh](#22361-number_to_capital_zh)
+- [link_to](#link_to)
+  - [data](#data)
+    - [disable_with](#disable_with)
 - [还有这种骚操作?](#还有这种骚操作)
   - [where.not](#wherenot)
 
@@ -1628,6 +1631,19 @@ whenever -i
 ### 2.2.36. 大写金额
 
 #### 2.2.36.1. number_to_capital_zh
+
+
+# link_to
+
+## data
+### disable_with
+
+> 按钮点击后禁用提示语(防止重复点击) 
+
+```ruby
+<%= link_to '补开发票',  make_up_invoice_order_path(order, back: request.fullpath), data: {:disable_with => "提交中..."} %>
+
+```
 
 # 还有这种骚操作?
 
