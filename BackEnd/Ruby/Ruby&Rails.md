@@ -1503,6 +1503,7 @@ end
 ### 2.2.7. excelc处理
 #### 2.2.7.1. spreadsheet
 
+> [spreadsheet](./Gems/spreadsheet.md)
 ### 2.2.8. 图片上传
 #### 2.2.8.1. carrierwave
 #### 2.2.8.2. paperclip
@@ -1634,6 +1635,12 @@ whenever -i
 
 
 # link_to
+
+方法|常用示例
+-|-
+link_to|link_to '名称', 路由, class: '样式类', back: 返回路径, data:{confirm: '再次确认内容', disable_with: '链接的禁用版本的名称(提交过程中)'}, method: 提交方式
+link_to_if|与link_to相比在 *名称* 前多了一个判断条件:<br>link_to_if order.can_make_up_invoice?[0], '补开发票',...<br>如果判断条件为false,链接标签还会渲染,只是 *禁用状态* 展示.
+link_to_unless|没看,参考_if
 
 ## data
 ### disable_with
