@@ -90,3 +90,7 @@ tmux detach
 ```
 tmux a -t session_index
 ```
+
+<hr>
+
+> [CSDN|终端分屏软件 tmux简单教程](https://blog.csdn.net/longxibendi/article/details/38541005)
