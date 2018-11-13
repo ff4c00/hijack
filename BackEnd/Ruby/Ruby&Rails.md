@@ -204,6 +204,9 @@
     - [disable_with](#disable_with)
 - [还有这种骚操作?](#还有这种骚操作)
   - [where.not](#wherenot)
+- [Rails](#rails)
+  - [解决问题](#解决问题)
+    - [The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option? (ArgumentError)](#the-provided-regular-expression-is-using-multiline-anchors-^-or--which-may-present-a-security-risk-did-you-mean-to-use-\a-and-\z-or-forgot-to-add-the-multiline--true-option-argumenterror)
 
 <!-- /TOC -->
 # 1. Ruby基础
@@ -1659,3 +1662,26 @@ link_to_unless|没看,参考_if
 ```ruby
 User.where.not(status: -1).ransack(params[:q])
 ```
+
+# Rails 
+
+## 解决问题
+
+### The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option? (ArgumentError)
+
+> 问题代码
+
+```ruby
+validates :password, format: { with: /^(?![0-9a-z]+$)(?![a-zA-Z]+$)(?![0-9A-Z]+$)[0-9a-zA-Z_&@$*]{8,20}$/, message: "密码要求包含数字,小写,大写英文及部分特殊符号且长度要求大于8位小于20位" }
+```
+
+> 原因
+
+正则中表示开始(^)和结尾($)的正则需要改为:\a和\
+z,如:
+
+```ruby
+  validates :password, format: { with: /\a(?![0-9a-z]+$)(?![a-zA-Z]+$)(?![0-9A-Z]+$)[0-9a-zA-Z_&@$*]{8,20}\z/, message: "密码要求包含数字,小写,大写英文及部分特殊符号且长度要求大于8位小于20位" }
+```
+
+> [参考链接 | stackoverflow](https://stackoverflow.com/questions/17759735/regular-expressions-with-validations-in-ror-4)

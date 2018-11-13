@@ -1,3 +1,5 @@
+> 软删除插件
+
 # paranoia
 > Gemfile添加源
 ```ruby
