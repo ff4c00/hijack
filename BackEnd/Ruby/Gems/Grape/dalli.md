@@ -1,6 +1,11 @@
-> memcached客户端的ruby客户端
+> 概述
+
+dalli是memcached的ruby版本客户端工具.
 
 > memcached
+
+memcached是一套分布式的高速缓存系统,<br>
+memcached缺乏认证以及安全管制,这代表应该将memcached服务器放置在防火墙后.
 
 # 基础使用
 
