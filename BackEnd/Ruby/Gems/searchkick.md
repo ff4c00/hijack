@@ -1,5 +1,57 @@
 > Elasticsearch搜索Ruby客户端
 
+<!-- TOC -->
+
+- [安装](#安装)
+  - [Gemfile](#gemfile)
+  - [Model](#model)
+  - [reindex](#reindex)
+- [基本使用](#基本使用)
+- [常见问题](#常见问题)
+  - [结果集过大(query_phase_execution_exception)](#结果集过大query_phase_execution_exception)
+- [参考资料](#参考资料)
+
+<!-- /TOC -->
+
+# 安装
+
+## Gemfile
+
+添加:
+
+```Ruby
+gem 'searchkick'
+```
+
+## Model
+
+如Product模型需要搜索功能,添加:
+
+```Ruby
+class Product < ApplicationRecord
+  # ...
+  searchkick
+  # ...
+end
+```
+
+## reindex
+
+当Product模型中的数据需要初始化或者重置索引时:
+
+```Ruby
+Product.reindex
+```
+
+> 单条数据重置索引
+
+```Ruby
+Product.first.reindex
+```
+
+# 基本使用
+
+
 # 常见问题
 
 ## 结果集过大(query_phase_execution_exception)
@@ -13,5 +65,9 @@
 ```
 curl -XPUT "http://localhost:9200/上面标记的索引名称/_settings" -d '{ "index" : { "max_result_window" : 500000 } }'
 ```
+
+# 参考资料
+
+> []()
 
 
